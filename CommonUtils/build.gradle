@@ -1,4 +1,17 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+
+publish {
+    userOrg = 'shy'
+    groupId = 'com.shy'
+    artifactId = 'AndroidCommonLibrary'
+    publishVersion = '0.1.0'
+    desc = 'CommonLibrary'
+    website = 'https://github.com'
+}
+//./gradlew clean build bintrayUpload -PbintrayUser=shy -PbintrayKey=10e5bc440220ceca1808e1f6979369f114a5997f -PdryRun=false
+
+
 
 android {
     compileSdkVersion 26
@@ -22,11 +35,14 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
