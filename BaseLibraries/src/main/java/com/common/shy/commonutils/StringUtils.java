@@ -1,5 +1,6 @@
 package com.common.shy.commonutils;
 
+
 public class StringUtils {
 
     /**
