@@ -1,37 +1,25 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
+
 apply plugin: 'kotlin-android'
-apply plugin: 'com.novoda.bintray-release'
 
-publish {
-    userOrg = 'shy'
-    groupId = 'com.shy'
-    artifactId = 'AndroidCommonLibrary'
-    publishVersion = '0.1.0'
-    desc = 'CommonLibrary'
-    website = 'https://github.com'
-}
-//./gradlew clean build bintrayUpload -PbintrayUser=shy -PbintrayKey=10e5bc440220ceca1808e1f6979369f114a5997f -PdryRun=false
-
+apply plugin: 'kotlin-android-extensions'
 
 android {
-
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
     buildToolsVersion rootProject.ext.android["buildToolsVersion"]
-
     defaultConfig {
+        applicationId "com.common.shy"
         minSdkVersion rootProject.ext.android["minSdkVersion"]
         targetSdkVersion  rootProject.ext.android["targetSdkVersion"]
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
     }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -39,7 +27,7 @@ android {
 }
 
 dependencies {
-    api fileTree(include: ['*.jar'], dir: 'libs')
-    api rootProject.ext.dependencies["appcompat-v7"]
-    api rootProject.ext.dependencies["constraint-layout"]
+    implementation project(':InterviewModule')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
