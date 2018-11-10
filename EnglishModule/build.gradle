@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         minSdkVersion rootProject.ext.android["minSdkVersion"]
-        targetSdkVersion  rootProject.ext.android["targetSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
     }
@@ -26,4 +26,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     api project(':BaseModule')
 
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
 }
