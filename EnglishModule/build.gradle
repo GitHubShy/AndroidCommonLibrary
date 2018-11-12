@@ -1,4 +1,11 @@
-apply plugin: 'com.android.library'
+def isApk = rootProject.ext.runType
+
+if (isApk == '0') {
+    apply plugin: 'com.android.library'
+} else {
+    apply plugin: 'com.android.application'
+}
+
 
 android {
     compileSdkVersion rootProject.ext.android["compileSdkVersion"]
