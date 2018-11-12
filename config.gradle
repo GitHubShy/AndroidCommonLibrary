@@ -19,8 +19,8 @@ ext {
     runType = '0'
 
     urls = [
-            "release-base-url"    : "https://www.baidu.com",
-            "debug-base-url": "https://www.sina.com.cn/"
+            "release-base-url"    : '"https://www.baidu.com"',
+            "debug-base-url": '"https://www.sina.com.cn/"'
     ]
 
 }
