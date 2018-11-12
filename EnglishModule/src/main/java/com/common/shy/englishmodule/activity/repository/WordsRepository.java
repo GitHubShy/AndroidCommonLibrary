@@ -8,15 +8,21 @@ import com.common.shy.englishmodule.BuildConfig;
 import com.common.shy.englishmodule.activity.pojo.Word;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import jxl.Cell;
 import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
+import jxl.write.Label;
+import jxl.write.WritableSheet;
+import jxl.write.WritableWorkbook;
 
 public class WordsRepository {
 
@@ -27,7 +33,6 @@ public class WordsRepository {
     private static WordsRepository mRepository;
 
     private HashMap<String, List> mDifferentCategories = new HashMap();
-
 
     private WordsRepository() {
         TimeUtils timeUtils = new TimeUtils();
@@ -46,6 +51,7 @@ public class WordsRepository {
     private void getDataFromExcel() {
         String pate = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + mFileName;
         File excel = new File(pate);
+        int wordsTotal = 0;
         Log.e(TAG, "pate" + pate + "f=" + excel.exists());
         try {
             Workbook rwb = Workbook.getWorkbook(excel);
@@ -55,7 +61,8 @@ public class WordsRepository {
                 String sheetName = sheet.getName();
                 List<Word> questions = new ArrayList<>();
                 int rawNum = sheet.getRows();
-                Log.e(TAG, "rawNum = " + rawNum);
+                wordsTotal = wordsTotal + rawNum;
+                Log.e(TAG, "sheetName = " + sheetName);
                 for (int j = 0; j < rawNum; j++) {
                     Cell[] row = sheet.getRow(j);
                     Word.WordBuilder builder = new Word.WordBuilder();
@@ -72,14 +79,29 @@ public class WordsRepository {
                         builder.englishExplanation(row[3].getContents());
                     }
                     Word word = builder.build();
-                    Log.e(TAG,""+word.toString());
+//                    Log.e(TAG,""+word.toString());
                     questions.add(word);
                 }
                 mDifferentCategories.put(sheetName, questions);
             }
+            Log.e(TAG, "totalNum = " + wordsTotal);
         } catch (IOException e) {
             e.printStackTrace();
         } catch (BiffException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void writeExcel() {
+        String path = Environment.getExternalStorageDirectory().getAbsolutePath() + "/aa.xls";
+        File file = new File(path);
+        WritableWorkbook wwb;
+        try {
+            OutputStream os = new FileOutputStream(file);
+            wwb = Workbook.createWorkbook(os);
+            wwb.write();
+            wwb.close();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
