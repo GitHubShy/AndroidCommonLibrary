@@ -23,6 +23,11 @@ android {
         targetSdkVersion  rootProject.ext.android["targetSdkVersion"]
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
     }
 
     buildTypes {
@@ -42,4 +47,5 @@ dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
     api rootProject.ext.dependencies["appcompat-v7"]
     api rootProject.ext.dependencies["constraint-layout"]
+    api rootProject.ext.dependencies["arouter"]
 }

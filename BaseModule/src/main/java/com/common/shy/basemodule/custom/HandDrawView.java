@@ -16,7 +16,7 @@ import java.util.List;
 public class HandDrawView extends View {
 
     private Paint mPaint;
-    private List<Path> mPathList = new ArrayList<Path>();
+    private List<Path> mPathList = new ArrayList<>();
     private Path mCurrentPath = new Path();
     private float mLastX;
     private float mLastY;
