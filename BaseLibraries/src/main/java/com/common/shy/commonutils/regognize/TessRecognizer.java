@@ -13,7 +13,7 @@ public class TessRecognizer implements Recognizer {
 
     @Override
     public void init(Context context) {
-        FileUtils.AssetsToSD("eng.traineddata", Environment.getExternalStorageDirectory().getAbsolutePath() + "/tessdata", context);
+        FileUtils.assetsToSD("eng.traineddata", Environment.getExternalStorageDirectory().getAbsolutePath() + "/tessdata", context);
 
     }
 

@@ -45,6 +45,10 @@ public class WordsRepository {
         return mRepository;
     }
 
+    public HashMap<String, List> getmDifferentCategories() {
+        return mDifferentCategories;
+    }
+
     private void getDataFromExcel() {
         String pate = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + mFileName;
         File excel = new File(pate);

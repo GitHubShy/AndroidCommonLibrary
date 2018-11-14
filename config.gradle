@@ -8,16 +8,16 @@ ext {
             versionName      : '1.0.0',
     ]
     version = [
-            "support-v7": '27.0.0'
+            "support-v7": '27.1.1'
     ]
-
     dependencies = [
             "appcompat-v7"    : "com.android.support:appcompat-v7:${version["support-v7"]}",
             "constraint-layout": "com.android.support.constraint:constraint-layout:1.1.0",
             "arouter": "com.alibaba:arouter-api:1.4.1",
-            "tess": "com.rmtheis:tess-two:9.0.0"
-
+            "tess": "com.rmtheis:tess-two:9.0.0",
+            "recycleview": "com.android.support:recyclerview-v7:${version["support-v7"]}",
     ]
+
 
     runType = '0'
 

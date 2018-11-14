@@ -9,7 +9,7 @@
 
     <application>
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.CatalogueActivity"
             android:label="EnglishSpell"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat">
@@ -25,7 +25,7 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat" />
         <activity
-            android:name=".activity.TestSpelling"
+            android:name=".activity.SpellingActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:screenOrientation="landscape" />
     </application>

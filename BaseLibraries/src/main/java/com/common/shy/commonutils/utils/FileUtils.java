@@ -17,7 +17,7 @@ public class FileUtils {
      * @param assertFileName
      * @param destinationPath
      */
-    public static boolean AssetsToSD(String assertFileName, String destinationPath, Context context) {
+    public static boolean assetsToSD(String assertFileName, String destinationPath, Context context) {
         File file = new File(destinationPath);
         if (!file.exists()) {
             if (!file.mkdirs()) {
@@ -44,7 +44,7 @@ public class FileUtils {
     }
 
     public static void bitmapToFile(Bitmap src, File file) {
-        try {                                       // 写入图片
+        try {// 写入图片
             FileOutputStream fos = new FileOutputStream(file);
             src.compress(Bitmap.CompressFormat.PNG, 100, fos);
             fos.flush();
