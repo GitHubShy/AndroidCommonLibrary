@@ -1,5 +1,7 @@
-package com.common.shy.commonutils;
+package com.common.shy.commonutils.utils;
 
+
+import com.common.shy.commonutils.BuildConfig;
 
 public class Logger {
 	/**

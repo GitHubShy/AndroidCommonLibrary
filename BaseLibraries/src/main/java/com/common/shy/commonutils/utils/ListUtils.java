@@ -1,4 +1,4 @@
-package com.common.shy.commonutils;
+package com.common.shy.commonutils.utils;
 
 import java.util.ArrayList;
 import java.util.HashSet;

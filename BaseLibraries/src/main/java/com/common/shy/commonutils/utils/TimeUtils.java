@@ -1,4 +1,4 @@
-package com.common.shy.commonutils;
+package com.common.shy.commonutils.utils;
 
 public class TimeUtils {
 

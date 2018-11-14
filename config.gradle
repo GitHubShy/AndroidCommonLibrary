@@ -14,7 +14,9 @@ ext {
     dependencies = [
             "appcompat-v7"    : "com.android.support:appcompat-v7:${version["support-v7"]}",
             "constraint-layout": "com.android.support.constraint:constraint-layout:1.1.0",
-            "arouter": "com.alibaba:arouter-api:1.4.1"
+            "arouter": "com.alibaba:arouter-api:1.4.1",
+            "tess": "com.rmtheis:tess-two:9.0.0"
+
     ]
 
     runType = '0'

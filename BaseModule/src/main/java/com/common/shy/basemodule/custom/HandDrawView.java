@@ -25,7 +25,7 @@ public class HandDrawView extends View {
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
         mPaint.setStyle(Paint.Style.STROKE);
-        mPaint.setStrokeWidth(5);
+        mPaint.setStrokeWidth(20);
         mPaint.setColor(Color.RED);
 
     }
@@ -93,7 +93,10 @@ public class HandDrawView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         canvas.drawPath(mCurrentPath,mPaint);
-        for (Path path : mPathList) {
-        }
+    }
+
+    public void clear () {
+        mCurrentPath = new Path();
+        invalidate();
     }
 }
