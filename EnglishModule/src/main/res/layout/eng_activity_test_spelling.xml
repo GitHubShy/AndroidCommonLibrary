@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="5dp"
+    android:padding="15dp"
     tools:context=".activity.SpellingActivity">
 
     <TextView
@@ -16,39 +16,112 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/answer"
+        android:id="@+id/all_word"
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
-        android:text="xxxxxx"
-        app:layout_constraintStart_toStartOf="@+id/question"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="查看所有单词"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/question" />
 
-    <Button
+
+    <TextView
+        android:id="@+id/display_phonetic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="显示音标"
+        app:layout_constraintBottom_toBottomOf="@+id/all_word"
+        app:layout_constraintStart_toEndOf="@+id/all_word"
+        app:layout_constraintTop_toTopOf="@+id/all_word" />
+
+    <TextView
+        android:id="@+id/phonetic"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginLeft="30dp"
+        android:text="xxxxxx"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/display_phonetic"
+        app:layout_constraintStart_toEndOf="@+id/display_phonetic"
+        app:layout_constraintTop_toTopOf="@+id/display_phonetic" />
+
+
+    <EditText
+        android:id="@+id/answer"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="10dp"
+        android:text="english"
+        app:layout_constraintStart_toStartOf="@+id/question"
+        app:layout_constraintTop_toBottomOf="@+id/phonetic" />
+
+    <TextView
         android:id="@+id/recognize"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
         android:text="recognize"
         app:layout_constraintBottom_toBottomOf="@+id/answer"
         app:layout_constraintStart_toEndOf="@+id/answer"
         app:layout_constraintTop_toTopOf="@+id/answer" />
 
-    <Button
+    <TextView
         android:id="@+id/clear"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
         android:text="clear"
-        app:layout_constraintBottom_toBottomOf="@+id/recognize"
+        app:layout_constraintBottom_toBottomOf="@+id/answer"
         app:layout_constraintStart_toEndOf="@+id/recognize"
-        app:layout_constraintTop_toTopOf="@+id/recognize" />
+        app:layout_constraintTop_toTopOf="@+id/answer" />
+
+    <TextView
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:text="提交"
+        app:layout_constraintBottom_toBottomOf="@+id/answer"
+        app:layout_constraintStart_toEndOf="@+id/clear"
+        app:layout_constraintTop_toTopOf="@+id/answer" />
+
+
+    <TextView
+        android:id="@+id/accuracy"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:text="90%"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/answer"
+        app:layout_constraintStart_toEndOf="@+id/submit"
+        app:layout_constraintTop_toTopOf="@+id/answer" />
 
     <com.common.shy.basemodule.custom.HandDrawView
         android:id="@+id/broad"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@android:color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/answer"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/answer" />
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/words_list"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/answer"
+        app:layout_constraintTop_toBottomOf="@+id/answer" />
+
 
 </android.support.constraint.ConstraintLayout>

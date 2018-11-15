@@ -48,8 +48,7 @@ public class CatalogueActivity extends AppCompatActivity {
         mAdapter = new CatalogueAdapter(mData);
         mAdapter.setmClickListener((position, type) -> {
             Catalogue catalogue = mData.get(position);
-            Intent i = new Intent();
-            i.putExtra("title",catalogue.title);
+            ActivityDispatcher.toSpellingActivity(catalogue.title);
         });
         mRecycleView.setAdapter(mAdapter);
     }

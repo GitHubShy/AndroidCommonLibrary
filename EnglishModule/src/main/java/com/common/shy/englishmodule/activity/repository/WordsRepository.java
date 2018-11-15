@@ -49,6 +49,13 @@ public class WordsRepository {
         return mDifferentCategories;
     }
 
+    public List<Word> getOneList(String title) {
+        if (mDifferentCategories.get(title) != null) {
+            return mDifferentCategories.get(title);
+        }
+        return null;
+    }
+
     private void getDataFromExcel() {
         String pate = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + mFileName;
         File excel = new File(pate);

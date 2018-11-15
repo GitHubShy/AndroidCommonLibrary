@@ -7,6 +7,12 @@ public class Word {
     private String chineseExplanation;
     private String phonetic;
 
+    private String wrongWord;
+
+    public void setWrongWord(String wrongWord) {
+        this.wrongWord = wrongWord;
+    }
+
     public Word(String word, String englishExplanation, String chineseExplanation, String phonetic) {
         this.word = word;
         this.englishExplanation = englishExplanation;
@@ -44,6 +50,10 @@ public class Word {
 
     public void setPhonetic(String phonetic) {
         this.phonetic = phonetic;
+    }
+
+    public String getWrongWord() {
+        return wrongWord;
     }
 
     public static class WordBuilder {

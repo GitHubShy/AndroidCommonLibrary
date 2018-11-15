@@ -43,6 +43,10 @@ public class FileUtils {
         }
     }
 
+    /**Save a bitmap to file
+     * @param src
+     * @param file
+     */
     public static void bitmapToFile(Bitmap src, File file) {
         try {// 写入图片
             FileOutputStream fos = new FileOutputStream(file);
@@ -56,4 +60,18 @@ public class FileUtils {
         }
 
     }
+
+    /** Get a file from asserts
+     * @param context context
+     * @param fileName fileName such as words.xls
+     */
+    public static void getAssertsFile (Context context , String fileName) {
+        try {
+            InputStream inputStream = context.getAssets().open(fileName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 }
