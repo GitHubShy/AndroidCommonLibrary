@@ -14,7 +14,7 @@ import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.common.shy.basemodule.custom.HandDrawView;
-import com.common.shy.commonutils.dispatcher.ActivityDispatcher;
+import com.common.shy.basemodule.dispatcher.ActivityDispatcher;
 import com.common.shy.commonutils.utils.BitmapUtils;
 import com.common.shy.commonutils.utils.Logger;
 import com.common.shy.commonutils.utils.StringUtils;

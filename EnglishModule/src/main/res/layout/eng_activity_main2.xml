@@ -4,22 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.Main2Activity">
+    tools:context=".activity.EngMainActivity">
 
     <TextView
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:text="aaaaaaaaaaa"
+        android:id="@+id/spelling"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="拼写"
         android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:text="button"
-        android:id="@+id/button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/data_binding"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="测试databinging"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/spelling"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

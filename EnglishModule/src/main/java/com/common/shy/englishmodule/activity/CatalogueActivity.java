@@ -1,13 +1,12 @@
 package com.common.shy.englishmodule.activity;
 
-import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.common.shy.commonutils.dispatcher.ActivityDispatcher;
+import com.common.shy.basemodule.dispatcher.ActivityDispatcher;
 import com.common.shy.englishmodule.R;
 import com.common.shy.englishmodule.activity.adapter.CatalogueAdapter;
 import com.common.shy.englishmodule.activity.pojo.Catalogue;

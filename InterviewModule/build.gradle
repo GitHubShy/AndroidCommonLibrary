@@ -23,6 +23,11 @@ android {
         }
     }
 
+
+    dataBinding {
+        enabled = true
+    }
+
     resourcePrefix 'inter_'
 
 }

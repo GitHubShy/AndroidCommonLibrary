@@ -8,9 +8,10 @@
     <uses-permission android:name="android.permission.CAMERA" />
 
     <application>
+
         <activity
-            android:name=".activity.CatalogueActivity"
-            android:label="EnglishSpell"
+            android:name=".activity.EngMainActivity"
+            android:label="English"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat">
             <intent-filter>
@@ -19,15 +20,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".activity.Main2Activity"
-            android:label="2"
+            android:name=".activity.CatalogueActivity"
+            android:label="EnglishSpell"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat" />
+            android:theme="@style/Theme.AppCompat">
+
+        </activity>
+
         <activity
             android:name=".activity.SpellingActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+
+        <activity
+            android:name=".activity.DataBindingActivity"
             android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>
