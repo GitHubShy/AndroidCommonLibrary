@@ -4,7 +4,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.common.shy.basemodule.dispatcher.ActivityDispatcher;
+import com.common.shy.commonutils.http.HttpRequestManager;
 import com.common.shy.englishmodule.R;
+
+import java.util.HashMap;
 
 public class EngMainActivity extends AppCompatActivity {
 
@@ -19,6 +22,8 @@ public class EngMainActivity extends AppCompatActivity {
         findViewById(R.id.data_binding).setOnClickListener(view -> {
             ActivityDispatcher.toDataBindingActivity();
         });
-
+        HashMap<String,String> map = new HashMap<>();
+        map.put("search", "Jurassic Park");
+        HttpRequestManager.postFormRequest("https://en.wikipedia.org/w/index.php",map);
     }
 }

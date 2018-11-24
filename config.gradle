@@ -16,6 +16,7 @@ ext {
             "arouter": "com.alibaba:arouter-api:1.4.1",
             "tess": "com.rmtheis:tess-two:9.0.0",
             "recycleview": "com.android.support:recyclerview-v7:${version["support-v7"]}",
+            "okhttp":"com.squareup.okhttp3:okhttp:3.12.0"
     ]
 
 
@@ -23,7 +24,7 @@ ext {
 
     urls = [
             "release-base-url"    : '"https://www.baidu.com"',
-            "debug-base-url": '"https://www.sina.com.cn/"'
+            "debug-base-url": '"http://newmobile3.youxinpai.com/"'
     ]
 
 }

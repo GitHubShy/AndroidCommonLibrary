@@ -53,4 +53,5 @@ dependencies {
     api rootProject.ext.dependencies["arouter"]
     api rootProject.ext.dependencies["tess"]
     api rootProject.ext.dependencies["recycleview"]
+    api rootProject.ext.dependencies["okhttp"]
 }
