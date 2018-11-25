@@ -11,20 +11,27 @@ ext {
             "support-v7": '27.1.1'
     ]
     dependencies = [
-            "appcompat-v7"    : "com.android.support:appcompat-v7:${version["support-v7"]}",
+            "appcompat-v7"     : "com.android.support:appcompat-v7:${version["support-v7"]}",
             "constraint-layout": "com.android.support.constraint:constraint-layout:1.1.0",
-            "arouter": "com.alibaba:arouter-api:1.4.1",
-            "tess": "com.rmtheis:tess-two:9.0.0",
-            "recycleview": "com.android.support:recyclerview-v7:${version["support-v7"]}",
-            "okhttp":"com.squareup.okhttp3:okhttp:3.12.0"
+            "arouter"          : "com.alibaba:arouter-api:1.4.1",
+            "tess"             : "com.rmtheis:tess-two:9.0.0",
+            "recycleview"      : "com.android.support:recyclerview-v7:${version["support-v7"]}",
+            "okhttp"           : "com.squareup.okhttp3:okhttp:3.12.0",
+            "lifecycle"        : "android.arch.lifecycle:common-java8:1.1.1",
     ]
 
 
     runType = '0'
 
     urls = [
-            "release-base-url"    : '"https://www.baidu.com"',
-            "debug-base-url": '"http://newmobile3.youxinpai.com/"'
+            "release-base-url": '"https://www.baidu.com"',
+            "debug-base-url"  : '"http://newmobile3.youxinpai.com/"'
+    ]
+
+    keys = [
+            "baiduVoice-app-id"    : '"14934922"',
+            "baiduVoice-api-key"   : '"ttqFQId8018eUuMwkkxvpnQj"',
+            "baiduVoice-secret-key": '"BmSNR7idkznIdEvFgSeGdoQ0q6yaCIbq"'
     ]
 
 }

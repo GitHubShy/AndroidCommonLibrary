@@ -1,4 +1,4 @@
-package com.common.shy.basemodule;
+package com.common.shy.commonutils;
 
 import android.app.Application;
 import android.content.Context;

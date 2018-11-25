@@ -18,6 +18,7 @@ import com.common.shy.basemodule.dispatcher.ActivityDispatcher;
 import com.common.shy.commonutils.utils.BitmapUtils;
 import com.common.shy.commonutils.utils.Logger;
 import com.common.shy.commonutils.utils.StringUtils;
+import com.common.shy.commonutils.voice.VoiceManager;
 import com.common.shy.englishmodule.R;
 import com.common.shy.englishmodule.activity.adapter.WordsAdapter;
 import com.common.shy.englishmodule.activity.pojo.Word;
@@ -34,6 +35,7 @@ public class SpellingActivity extends AppCompatActivity {
     private TextView mQuestion;
     private TextView mCheckAll;
     private TextView mDisplayPhonetic;
+    private TextView mDisplayChinese;
     private TextView mPhonetic;
     private EditText mUserAnswer;
     private TextView mRecognize;
@@ -56,6 +58,8 @@ public class SpellingActivity extends AppCompatActivity {
     private int mRepoSize;
     private int mCorrectNum;
 
+
+    private VoiceManager mVoiceManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,6 +74,7 @@ public class SpellingActivity extends AppCompatActivity {
         mQuestion = findViewById(R.id.question);
         mCheckAll = findViewById(R.id.all_word);
         mDisplayPhonetic = findViewById(R.id.display_phonetic);
+        mDisplayChinese = findViewById(R.id.display_chinese);
         mPhonetic = findViewById(R.id.phonetic);
         mUserAnswer = findViewById(R.id.answer);
         mRecognize = findViewById(R.id.recognize);
@@ -95,13 +100,14 @@ public class SpellingActivity extends AppCompatActivity {
             }
             return false;
         });
-        mDisplayPhonetic.setOnClickListener(view -> {
-            mPhonetic.setVisibility(View.VISIBLE);
-        });
+        mDisplayPhonetic.setOnClickListener(view -> mPhonetic.setVisibility(View.VISIBLE));
+        mDisplayChinese.setOnClickListener(v -> mQuestion.setVisibility(View.VISIBLE));
         mCheckAll.setOnClickListener(view -> showAllWords());
     }
 
     private void initData() {
+        mVoiceManager = new VoiceManager();
+        getLifecycle().addObserver(mVoiceManager);
         mOriginalDatas = WordsRepository.getWordsRepository().getOneList(title);
         if (mOriginalDatas != null) {
             mQuestionRepository.addAll(mOriginalDatas);
@@ -130,7 +136,9 @@ public class SpellingActivity extends AppCompatActivity {
         mQuestion.setText(mCurrentWord.getChineseExplanation());
         mPhonetic.setText(mCurrentWord.getPhonetic());
         mPhonetic.setVisibility(View.GONE);
+        mQuestion.setVisibility(View.GONE);
         mUserAnswer.setText("");
+        mVoiceManager.speakText(mCurrentWord.getWord());
     }
 
     private void estimate() {

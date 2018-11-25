@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.common.shy.basemodule.dispatcher.ActivityDispatcher;
+import com.common.shy.commonutils.voice.VoiceManager;
 import com.common.shy.englishmodule.R;
 import com.common.shy.englishmodule.activity.adapter.CatalogueAdapter;
 import com.common.shy.englishmodule.activity.pojo.Catalogue;

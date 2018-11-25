@@ -11,6 +11,7 @@
         android:id="@+id/question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="invisible"
         android:text="xxxxxx"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,15 +37,25 @@
         app:layout_constraintTop_toTopOf="@+id/all_word" />
 
     <TextView
+        android:id="@+id/display_chinese"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:text="显示中文"
+        app:layout_constraintBottom_toBottomOf="@+id/display_phonetic"
+        app:layout_constraintStart_toEndOf="@+id/display_phonetic"
+        app:layout_constraintTop_toTopOf="@+id/display_phonetic" />
+
+    <TextView
         android:id="@+id/phonetic"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginLeft="30dp"
         android:text="xxxxxx"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/display_phonetic"
-        app:layout_constraintStart_toEndOf="@+id/display_phonetic"
-        app:layout_constraintTop_toTopOf="@+id/display_phonetic" />
+        app:layout_constraintBottom_toBottomOf="@+id/display_chinese"
+        app:layout_constraintStart_toEndOf="@+id/display_chinese"
+        app:layout_constraintTop_toTopOf="@+id/display_chinese" />
 
 
     <EditText

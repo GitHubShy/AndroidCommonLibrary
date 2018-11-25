@@ -23,6 +23,9 @@ android {
         targetSdkVersion  rootProject.ext.android["targetSdkVersion"]
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
+        buildConfigField 'String', 'BV_APP_ID', rootProject.ext.keys["baiduVoice-app-id"]
+        buildConfigField 'String', 'BV_APP_KEY', rootProject.ext.keys["baiduVoice-api-key"]
+        buildConfigField 'String', 'BV_SECRET_KEY', rootProject.ext.keys["baiduVoice-secret-key"]
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
@@ -54,4 +57,5 @@ dependencies {
     api rootProject.ext.dependencies["tess"]
     api rootProject.ext.dependencies["recycleview"]
     api rootProject.ext.dependencies["okhttp"]
+    api rootProject.ext.dependencies["lifecycle"]
 }
