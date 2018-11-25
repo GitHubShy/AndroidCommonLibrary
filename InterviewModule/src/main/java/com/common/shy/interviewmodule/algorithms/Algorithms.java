@@ -1,7 +1,7 @@
-package com.common.shy.interviewmodule.algorithm;
+package com.common.shy.interviewmodule.algorithms;
 
 public class Algorithms {
     public static void main(String[] args) {
-        new SortAlgorithm().insertionSort();
+        new com.common.shy.interviewmodule.algorithm.SortAlgorithm().insertionSort();
     }
 }

@@ -5,7 +5,9 @@ public class Numbers {
     public static void main(String[] args) {
 //        new Numbers().echoPrimeNumbers();
 //        new Numbers().echoNarcissusNumbers(1000);
-        new Numbers().ball(100,10);
+//        new Numbers().ball(100, 10);
+//        new Numbers().calculateFactorial(5);
+        new Numbers().combinationsForNumbers();
     }
 
     /**
@@ -47,7 +49,44 @@ public class Numbers {
         for (int i = 1; i <= times; i++) {
             bounce = bounce / 2;
             totalTravel = totalTravel + bounce * 3;
-            System.out.println("i="+i+"---bounce = " + bounce+"--totalTravel="+totalTravel);
+            System.out.println("i=" + i + "---bounce = " + bounce + "--totalTravel=" + totalTravel);
         }
+    }
+
+    /**
+     * calculate the factorial
+     *
+     * @param n
+     */
+    private int calculateFactorial(int n) {
+        if (n <= 0) {
+            return 0;
+        }
+        if (n == 1) {
+            return 1;
+        }
+        int result = n * calculateFactorial(n - 1);
+        System.out.println("result=" + result);
+        return result;
+    }
+
+    /**
+     * There are four numbers and they are 1,2,3,4 respectively.How many combinations of three-digit numbers in which every one have no
+     * repeated numbers from them?
+     *
+     * @return
+     */
+    private void combinationsForNumbers() {
+        int num = 0;
+        for (int i = 1; i < 5; i++) {
+            for (int j = 1; j < 5; j++) {
+                for (int k = 1; k < 5; k++) {
+                    if (i != j && j != k && i != k) {
+                        num++;
+                    }
+                }
+            }
+        }
+        System.out.println("numbers=" + num);
     }
 }
