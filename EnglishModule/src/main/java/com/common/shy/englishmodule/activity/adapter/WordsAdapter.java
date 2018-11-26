@@ -46,7 +46,7 @@ public class WordsAdapter extends RecyclerView.Adapter<WordsAdapter.WrongWordVie
         return mData.size();
     }
 
-    public class WrongWordViewHolder extends RecyclerView.ViewHolder {
+    public static class WrongWordViewHolder extends RecyclerView.ViewHolder {
 
         public TextView chinese;
         public TextView rightWord;
