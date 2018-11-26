@@ -1,7 +1,11 @@
 package com.common.shy.commonutils.utils;
 
 import android.graphics.Bitmap;
+import android.util.Base64;
 import android.view.View;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 
 public class BitmapUtils {
 
@@ -19,4 +23,49 @@ public class BitmapUtils {
         view.destroyDrawingCache();
         return bitmap;
     }
+
+    public static String bitmapToBase64(Bitmap bitmap) {
+
+        // 要返回的字符串
+        String reslut = null;
+
+        ByteArrayOutputStream baos = null;
+
+        try {
+
+            if (bitmap != null) {
+
+                baos = new ByteArrayOutputStream();
+                /**
+                 * 压缩只对保存有效果bitmap还是原来的大小
+                 */
+                bitmap.compress(Bitmap.CompressFormat.PNG, 30, baos);
+
+                baos.flush();
+                baos.close();
+                // 转换为字节数组
+                byte[] byteArray = baos.toByteArray();
+
+                // 转换为字符串
+                reslut = Base64.encodeToString(byteArray, Base64.DEFAULT);
+            } else {
+                return null;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+
+            try {
+                if (baos != null) {
+                    baos.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+        return reslut;
+
+    }
+
 }

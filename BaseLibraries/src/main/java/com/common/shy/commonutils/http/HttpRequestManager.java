@@ -42,15 +42,15 @@ public class HttpRequestManager {
 
 
     public static void request(SimpleRequestBean bean) {
-        switch (bean.getType()){
+        switch (bean.getType()) {
             case FORM:
-                postFormRequest(bean.getUrl(), bean.getParameters());
+                postFormRequest(bean.getUrl(), bean.getParameters(),bean.getHeaders());
                 break;
             case JSON:
                 postJsonRequest(bean.getUrl(), bean.getJson());
                 break;
             case FILE:
-                postFileRequest(bean.getUrl(),bean.getFile());
+                postFileRequest(bean.getUrl(), bean.getFile());
                 break;
         }
     }
@@ -77,7 +77,7 @@ public class HttpRequestManager {
      * @param url
      * @param map
      */
-    public static void postFormRequest(String url, HashMap<String, String> map) {
+    public static void postFormRequest(String url, HashMap<String, String> map, HashMap<String, String> header) {
         FormBody.Builder builder = new FormBody.Builder();
         if (map != null && map.size() > 0) {
             for (Map.Entry<String, String> entry : map.entrySet()) {
@@ -85,10 +85,16 @@ public class HttpRequestManager {
             }
         }
         FormBody formBody = builder.build();
-        Request request = new Request.Builder()
-                .url(url)
-                .post(formBody)
-                .build();
+        Request.Builder builder1 = new Request.Builder();
+        builder1.url(url);
+        builder1.post(formBody);
+        if (header != null && header.size() > 0) {
+            for (Map.Entry<String, String> entry : header.entrySet()) {
+                Logger.e("111111111111111","="+entry.getKey());
+                builder1.addHeader(entry.getKey(), entry.getValue());
+            }
+        }
+        Request request = builder1.build();
         sendRequest(request);
     }
 

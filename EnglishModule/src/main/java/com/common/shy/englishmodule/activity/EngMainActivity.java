@@ -22,8 +22,5 @@ public class EngMainActivity extends AppCompatActivity {
         findViewById(R.id.data_binding).setOnClickListener(view -> {
             ActivityDispatcher.toDataBindingActivity();
         });
-        HashMap<String,String> map = new HashMap<>();
-        map.put("search", "Jurassic Park");
-        HttpRequestManager.postFormRequest("https://en.wikipedia.org/w/index.php",map);
     }
 }
