@@ -3,7 +3,7 @@ package com.common.shy.interviewmodule.algorithms;
 
 public class SortAlgorithm {
 
-    private Integer[] mNumbers = new Integer[]{33, 43, 65, 3, 44, 1, 87, 88, 98, 78, 101, 2, 4, 56};
+    private Integer[] mNumbers = new Integer[]{5, 1, 4, 6};
 
     public void bubbleSort() {
         int length = mNumbers.length;
@@ -57,8 +57,39 @@ public class SortAlgorithm {
         echo(mNumbers);
     }
 
+    public Integer[] getmNumbers() {
+        return mNumbers;
+    }
 
-    private void echo(Integer[] mNumbers) {
+    public void quickSort(int left, int right) {
+        if (left >= right) {
+            return;
+        }
+        int i = left;
+        int j = right;
+        int temp = mNumbers[i];
+        while (i < j) {
+            while (i < j && mNumbers[j] >= temp) {
+                j--;
+            }
+            if (i < j) {
+                mNumbers[i] = mNumbers[j];
+            }
+            while (i < j && mNumbers[i] <= temp) {
+                i++;
+            }
+            if (i < j) {
+                mNumbers[j] = mNumbers[i];
+            }
+        }
+        mNumbers[i] = temp;
+        quickSort(0, i - 1);
+        quickSort(i + 1, mNumbers.length - 1);
+
+    }
+
+
+    public void echo(Integer[] mNumbers) {
         for (Integer i : mNumbers) {
             System.out.println(i);
         }
