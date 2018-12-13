@@ -1,2 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.common.shy.interviewmodule" />
+    package="com.common.shy.interviewmodule">
+
+    <application>
+        <activity android:name=".services.FirstActivity" />
+        <activity android:name=".services.SecondActivity" />
+        <service android:name=".services.Services" />
+    </application>
+
+</manifest>

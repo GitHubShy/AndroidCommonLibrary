@@ -22,5 +22,8 @@ public class EngMainActivity extends AppCompatActivity {
         findViewById(R.id.data_binding).setOnClickListener(view -> {
             ActivityDispatcher.toDataBindingActivity();
         });
+        findViewById(R.id.service).setOnClickListener(view -> {
+            ActivityDispatcher.toServiceFirstActivity();
+        });
     }
 }

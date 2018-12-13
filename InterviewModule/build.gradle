@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         minSdkVersion rootProject.ext.android["minSdkVersion"]
-        targetSdkVersion  rootProject.ext.android["targetSdkVersion"]
+        targetSdkVersion rootProject.ext.android["targetSdkVersion"]
         versionCode rootProject.ext.android["versionCode"]
         versionName rootProject.ext.android["versionName"]
         javaCompileOptions {
@@ -34,6 +34,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
     api project(':BaseModule')
-
 }
