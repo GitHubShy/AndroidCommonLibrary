@@ -5,7 +5,19 @@
     <application>
         <activity android:name=".services.FirstActivity" />
         <activity android:name=".services.SecondActivity" />
+
         <service android:name=".services.Services" />
+
+        <activity
+            android:name=".activity.Cell"
+            android:screenOrientation="portrait"
+            android:label="bbbb">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
