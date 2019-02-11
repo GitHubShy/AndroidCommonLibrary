@@ -7,7 +7,7 @@
     tools:context=".activity.Cell">
 
 
-    <com.common.shy.basemodule.custom.CellView
+    <com.common.shy.interviewmodule.activity.CellView
         android:id="@+id/view"
         android:layout_width="0dp"
         android:layout_height="0dp"
