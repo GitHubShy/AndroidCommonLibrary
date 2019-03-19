@@ -1,15 +1,14 @@
-package com.common.shy.englishmodule.activity;
+package com.common.shy.acitvity;
 
-import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import com.common.shy.basemodule.dispatcher.ActivityDispatcher;
-import com.common.shy.commonutils.http.HttpRequestManager;
 import com.common.shy.englishmodule.R;
 
-import java.util.HashMap;
 
-public class EngMainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
 
     @Override

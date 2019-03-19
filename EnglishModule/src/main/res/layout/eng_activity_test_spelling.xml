@@ -22,6 +22,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:text="查看所有单词"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/eng_spelling_button"
+        android:background="@drawable/base_button_round_corner_blue"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/question" />
 
@@ -32,6 +36,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:text="显示音标"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/eng_spelling_button"
+        android:background="@drawable/base_button_round_corner_blue"
         app:layout_constraintBottom_toBottomOf="@+id/all_word"
         app:layout_constraintStart_toEndOf="@+id/all_word"
         app:layout_constraintTop_toTopOf="@+id/all_word" />
@@ -42,6 +50,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:text="显示中文"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/eng_spelling_button"
+        android:background="@drawable/base_button_round_corner_blue"
         app:layout_constraintBottom_toBottomOf="@+id/display_phonetic"
         app:layout_constraintStart_toEndOf="@+id/display_phonetic"
         app:layout_constraintTop_toTopOf="@+id/display_phonetic" />
@@ -53,16 +65,16 @@
         android:layout_marginLeft="30dp"
         android:text="xxxxxx"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/display_chinese"
-        app:layout_constraintStart_toEndOf="@+id/display_chinese"
-        app:layout_constraintTop_toTopOf="@+id/display_chinese" />
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/all_word"
+        app:layout_constraintStart_toStartOf="parent"/>
 
 
     <EditText
         android:id="@+id/answer"
         android:layout_width="150dp"
         android:layout_height="45dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="english"
         app:layout_constraintStart_toStartOf="@+id/question"
         app:layout_constraintTop_toBottomOf="@+id/phonetic" />
@@ -70,10 +82,15 @@
     <TextView
         android:id="@+id/recognize"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:gravity="center"
         android:text="recognize"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:visibility="gone"
+        android:textColor="@color/eng_spelling_button"
+        android:background="@drawable/base_button_round_corner_blue"
         app:layout_constraintBottom_toBottomOf="@+id/answer"
         app:layout_constraintStart_toEndOf="@+id/answer"
         app:layout_constraintTop_toTopOf="@+id/answer" />
@@ -81,10 +98,15 @@
     <TextView
         android:id="@+id/clear"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:gravity="center"
         android:text="clear"
+        android:visibility="gone"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/eng_spelling_button"
+        android:background="@drawable/base_button_round_corner_blue"
         app:layout_constraintBottom_toBottomOf="@+id/answer"
         app:layout_constraintStart_toEndOf="@+id/recognize"
         app:layout_constraintTop_toTopOf="@+id/answer" />
@@ -92,12 +114,31 @@
     <TextView
         android:id="@+id/submit"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:gravity="center"
         android:text="提交"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/eng_spelling_button"
+        android:background="@drawable/base_button_round_corner_blue"
         app:layout_constraintBottom_toBottomOf="@+id/answer"
         app:layout_constraintStart_toEndOf="@+id/clear"
+        app:layout_constraintTop_toTopOf="@+id/answer" />
+
+    <TextView
+        android:id="@+id/index"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:gravity="center"
+        android:text="0/0"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/eng_spelling_button"
+        android:background="@drawable/base_button_round_corner_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/answer"
+        app:layout_constraintStart_toEndOf="@+id/submit"
         app:layout_constraintTop_toTopOf="@+id/answer" />
 
 
@@ -110,7 +151,7 @@
         android:text="90%"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/answer"
-        app:layout_constraintStart_toEndOf="@+id/submit"
+        app:layout_constraintStart_toEndOf="@+id/index"
         app:layout_constraintTop_toTopOf="@+id/answer" />
 
     <com.common.shy.basemodule.custom.HandDrawView

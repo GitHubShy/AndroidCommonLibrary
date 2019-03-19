@@ -15,17 +15,6 @@
 
     <application>
 
-        <activity
-            android:name=".activity.EngMainActivity"
-            android:label="English"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
         <activity
             android:name=".activity.CatalogueActivity"

@@ -56,6 +56,7 @@ public class SpellingActivity extends AppCompatActivity {
     private TextView mRecognize;
     private TextView mClear;
     private TextView mSubmit;
+    private TextView mIndex;
     private TextView mAccuracy;
     private HandDrawView mDrawView;
     private RecyclerView mRecycleView;
@@ -96,6 +97,7 @@ public class SpellingActivity extends AppCompatActivity {
         mRecognize = findViewById(R.id.recognize);
         mClear = findViewById(R.id.clear);
         mSubmit = findViewById(R.id.submit);
+        mIndex = findViewById(R.id.index);
         mAccuracy = findViewById(R.id.accuracy);
         mDrawView = findViewById(R.id.broad);
         mRecycleView = findViewById(R.id.words_list);
@@ -149,13 +151,13 @@ public class SpellingActivity extends AppCompatActivity {
         FileUtils.bitmapToFile(bitmap, f);
         String appid = "5aa8f6c4";
         String TEST_API_KEY = "4484a842bbbcb4390854ed2fb5e76168";
-        String time = System.currentTimeMillis()/ 1000L + "";
+        String time = System.currentTimeMillis() / 1000L + "";
         String json = "{" + "\"language\":\"en\"," + "\"location\":\"false\"" + "}";
-        String s = Base64.encodeToString(json.getBytes(),Base64.DEFAULT);
+        String s = Base64.encodeToString(json.getBytes(), Base64.DEFAULT);
 
         String checkNum = MD5.md5(TEST_API_KEY + time + "eyJsYW5ndWFnZSI6ImVuIiwibG9jYXRpb24iOiJmYWxzZSJ9");
         String img = BitmapUtils.bitmapToBase64(bitmap);
-        String ss= "";
+        String ss = "";
         try {
             ss = FileUtils.encodeBase64File(f);
         } catch (Exception e) {
@@ -190,6 +192,7 @@ public class SpellingActivity extends AppCompatActivity {
         mPhonetic.setVisibility(View.GONE);
         mQuestion.setVisibility(View.GONE);
         mUserAnswer.setText("");
+        mIndex.setText((mOriginalDatas.size() - mQuestionRepository.size() + 1) + "/" + mOriginalDatas.size());
         mVoiceManager.speakText(mCurrentWord.getWord());
     }
 

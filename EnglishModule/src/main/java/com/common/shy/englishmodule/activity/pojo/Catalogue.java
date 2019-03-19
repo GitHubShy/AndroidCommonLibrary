@@ -12,4 +12,5 @@ public class Catalogue {
     public String title;
     public String accuracy;
     public List<Question> question;
+    public int wordNums;
 }

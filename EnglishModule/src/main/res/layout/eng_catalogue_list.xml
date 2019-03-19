@@ -21,9 +21,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
+        android:padding="4dp"
         app:layout_constraintStart_toEndOf="@+id/title"
         app:layout_constraintTop_toTopOf="@+id/title"
         app:layout_constraintBottom_toBottomOf="@+id/title"
+        android:background="@drawable/base_button_stytle_1"
         android:text="汉翻英"/>
 
     <TextView
@@ -31,8 +33,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
+        android:padding="4dp"
         app:layout_constraintStart_toEndOf="@+id/c2e"
         app:layout_constraintTop_toTopOf="@+id/c2e"
+        android:background="@drawable/base_button_stytle_1"
         android:text="英翻汉"/>
 
 </android.support.constraint.ConstraintLayout>

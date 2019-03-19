@@ -70,7 +70,7 @@ public class WordsRepository {
                 List<Word> questions = new ArrayList<>();
                 int rawNum = sheet.getRows();
                 wordsTotal = wordsTotal + rawNum;
-                Log.e(TAG, "sheetName = " + sheetName);
+                Log.e(TAG, "sheetName = " + sheetName+"rawNum="+rawNum);
                 for (int j = 0; j < rawNum; j++) {
                     Cell[] row = sheet.getRow(j);
                     Word.WordBuilder builder = new Word.WordBuilder();
