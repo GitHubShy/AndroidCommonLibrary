@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import jxl.Cell;
@@ -29,7 +30,7 @@ public class WordsRepository {
 
     private static WordsRepository mRepository;
 
-    private HashMap<String, List> mDifferentCategories = new HashMap();
+    private LinkedHashMap<String, List> mDifferentCategories = new LinkedHashMap();
 
     private WordsRepository() {
         TimeUtils timeUtils = new TimeUtils();

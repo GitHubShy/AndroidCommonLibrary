@@ -54,4 +54,5 @@ public class CatalogueActivity extends AppCompatActivity {
         });
         mRecycleView.setAdapter(mAdapter);
     }
+
 }
